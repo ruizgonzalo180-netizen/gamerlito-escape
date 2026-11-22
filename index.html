@@ -8,7 +8,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Gamerlito Escape">
+  <meta name="apple-mobile-web-app-title" content="Gamerlito Lancha">
   <script>
     if (location.protocol === 'https:' || location.protocol === 'http:') {
       for (const [rel, href] of [['manifest', './app.webmanifest'], ['apple-touch-icon', './gamerlito-192.png']]) {
@@ -19,7 +19,7 @@
       }
     }
   </script>
-  <title>Roblox · Gamerlito Escape</title>
+  <title>Roblox · Gamerlito Lancha</title>
   <style>
     *{box-sizing:border-box}
     html,body{width:100%;height:100%;margin:0;overflow:hidden;overscroll-behavior:none;background:#101115}
@@ -487,7 +487,7 @@
 
   <script type="application/octet-stream" id="media-cover"></script><script src="cover-01.js"></script>
 <script type="application/octet-stream" id="media-ident"></script><script src="ident-01.js"></script>
-<script type="application/octet-stream" id="media-game"></script><script src="game-01.js"></script><script src="game-02.js"></script>
+<script type="application/octet-stream" id="media-game"></script><script src="boat-f1b464f6470d-01.js"></script><script src="boat-f1b464f6470d-02.js"></script><script src="boat-f1b464f6470d-03.js"></script>
   <script>
 (() => {
   'use strict';
@@ -618,8 +618,8 @@
   let rate = 1, sensitivity = 1, fit = 'cover';
   let volume = .65, soundNeedsTap = false, sprintHeld = false;
   let shownAction;
-  // Scene actions seek within this recording of the escape.
-  const sceneActions = [{"at": 7.067, "label": "Run into the street"}, {"at": 12.5, "label": "Lose the cops"}, {"at": 24.5, "label": "Reach the fence"}];
+  // Scene actions seek within this recording of the boat ride.
+  const sceneActions = [{"at": 17, "label": "Approach the bridge"}, {"at": 29, "label": "Turn by the bridge"}, {"at": 35, "label": "Follow the shoreline"}];
   let vectorX = 0, vectorY = 0, panX = 0, panY = 0, zoom = 1, lift = 0;
   let jumpStart = null, lastTick = 0, animation = null;
   const limit = (value,low,high) => Math.max(low,Math.min(high,value));
@@ -846,7 +846,7 @@
   function currentAction() {
     if (phase !== 'playing') return null;
     const next = sceneActions.find(cue => cue.at > footage.currentTime + .15);
-    return next || (footage.currentTime > 1 ? {at:0, label:'Replay escape'} : null);
+    return next || (footage.currentTime > 1 ? {at:0, label:'Replay boat ride'} : null);
   }
   function syncAction() {
     const label=currentAction()?.label || null;
